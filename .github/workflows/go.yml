@@ -50,7 +50,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKER_USERNAME }}/go-parcel-tracker
+          images: ${{ secrets.DOCKER_USERNAME }}/go1fl-sprint12-final-hw
 
       - name: Build and push
         uses: docker/build-push-action@v5
