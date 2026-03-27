@@ -1,9 +1,7 @@
 FROM golang:1.25 AS builder
 WORKDIR /app
-COPY go.mod go.sum ./
-RUN go mod download
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o parcel-tracker .
+RUN go mod tidy && go build -o parcel-tracker .
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
